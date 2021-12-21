@@ -10,7 +10,7 @@ const TABLE = 'users' + parseInt(process.env.TAP_CHILD_ID || 0);
   await cfg.createTable(db, TABLE);
   await db.insert(TABLE, { name: 'ab', code: 12 });
   await db.insert(TABLE, { name: 'cd', code: 34 });
-  
+
   let results = [];
   try {
     await db.transaction(async function (conn) {
@@ -20,7 +20,7 @@ const TABLE = 'users' + parseInt(process.env.TAP_CHILD_ID || 0);
     });
   } catch (err) {
     if (err !== 'err') throw err;
-    
+
     results = await db.select(TABLE, ['*']);
   }
 

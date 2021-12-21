@@ -100,7 +100,8 @@ function execute (sql, values) {
 
 async function transaction (callback) {
   let conn = await this.getConnection();
-
+  // 设置事务隔离级别为read committed
+  await releaseOnError.call(conn, conn.query(`SET TRANSACTION ISOLATION LEVEL READ COMMITTED`));
   await releaseOnError.call(conn, conn.beginTransaction());
 
   let callbackResult;
