@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/LuKks/like-mysql.git"
   },
-  "author": "Lucas Barrena <lucasbarrena@hotmail.com>",
+  "author": "libo <tolibo@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LuKks/like-mysql/issues"
+    "url": "https://github.com/riichg5/like-mysql/issues"
   },
-  "homepage": "https://github.com/LuKks/like-mysql#readme",
+  "homepage": "https://github.com/riichg5/like-mysql#readme",
   "keywords": [
     "like",
     "mysql",
