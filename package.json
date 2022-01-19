@@ -1,6 +1,6 @@
 {
   "name": "simple-mysql-orm",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Simple and intuitive ORM for MySQL",
   "main": "index.js",
   "scripts": {

@@ -59,8 +59,12 @@ function update (table, data, find, ...values) {
   find = parseFind(find);
   values.unshift(...Object.values(arithmetic ? data.slice(1) : data));
 
-  // update不进行预编译
-  return query.call(this, `UPDATE ${table} SET ${set}${find}`, values);
+  if (!arithmetic) {
+    return execute.call(this, `UPDATE ${table} SET ${set}${find}`, values);
+  } else {
+    // 不进行预编译
+    return query.call(this, `UPDATE ${table} SET ${set}${find}`, values);
+  }
 }
 
 function delet3 (table, find, ...values) {
@@ -80,6 +84,7 @@ function parseFind (find) {
 }
 
 function execute (sql, values) {
+  console.log('execute update:', sql, values);
   return this.execute(sql, values).then(([res, fields]) => {
     this.sql = sql;
     this.values = values;
@@ -100,6 +105,7 @@ function execute (sql, values) {
 }
 
 function query (sql, values) {
+  console.log('query update:', sql, values);
   return this.query(sql, values).then(([res, fields]) => {
     this.sql = sql;
     this.values = values;
