@@ -84,7 +84,7 @@ function parseFind (find) {
 }
 
 function execute (sql, values) {
-  console.log('execute update:', sql, values);
+  console.log('execute:', sql, values);
   return this.execute(sql, values).then(([res, fields]) => {
     this.sql = sql;
     this.values = values;
@@ -105,7 +105,7 @@ function execute (sql, values) {
 }
 
 function query (sql, values) {
-  console.log('query update:', sql, values);
+  console.log('query:', sql, values);
   return this.query(sql, values).then(([res, fields]) => {
     this.sql = sql;
     this.values = values;
